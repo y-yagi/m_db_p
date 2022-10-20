@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/containers/db_primary/data
+/containers/db_replica/data
