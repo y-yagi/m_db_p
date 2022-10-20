@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+u = User.create!(email: "dummy@exmample.com")
+sleep 1
+ApplicationRecord.connected_to(role: :reading) { User.find(u.id) }
+u.destroy!
+puts "check ok"
