@@ -9,6 +9,13 @@ module PostgreSQLAdapterWrapper
   rescue PG::Error
     false
   end
+
+  def verify!
+    unless active?
+      disconnect!
+      connect
+    end
+  end
 end
 
 ActiveSupport.on_load(:active_record) do
